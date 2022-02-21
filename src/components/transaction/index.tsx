@@ -6,7 +6,7 @@ export function TransitionsTable() {
   useEffect(() => {
     fetch('http://localhost:3000/api/transactions') //rota possivelmente criariamos no futuro
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => console.log(data)) //console .log nos dados
   }, [])
 
   return (
