@@ -1,14 +1,19 @@
 import { useEffect } from "react";
+import { api } from "../../services/api";
 import { Container } from "./styles";
 
 
 export function TransitionsTable() {
   useEffect(() => {
-    fetch('http://localhost:3000/api/transactions') //rota possivelmente criariamos no futuro
-    .then(response => response.json())
-    .then(data => console.log(data)) //console .log nos dados
+    api.get('transactions') //rota possivelmente criariamos no futuro
+    .then(response => console.log(response.data)) //console .log nos dados
   }, [])
 
+
+  //add a "api" que é a const que criamos no srquivo api em services e colocamos ele para "get"
+  //Não precisamos mais da conversão do .json
+  // já onde estava (data => console.log(data)) vamos trocar por (response => console.log(response.data)) 
+  
   return (
     <Container>
       <table>

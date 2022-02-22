@@ -12,7 +12,10 @@ createServer({
         {
           id: 1,
           title: "transaction 1",
-          amount: 400
+          amount: 400,
+          type: 'deposit',
+          category: 'food',
+          createAt: new Date()
         }
       ]
     }  )//quando ouver uma requisição do tipo get para a rota transactions
