@@ -12,14 +12,6 @@ export function App() {
   //cofigurando modal
   const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] = useState(false)//inicia como false
 
-  const [ transactions, setTransactions ] = useState<Transaction[]>([]);
-
-
-  useEffect(() => {
-    api.get('transactions') //rota possivelmente criariamos no futuro
-    .then(response => setTransactions(response.data.transactions))
-  }, [])
-
   function handleOpenNewTransactionModal() {
     setIsNewTransactionModalOpen(true) 
   }

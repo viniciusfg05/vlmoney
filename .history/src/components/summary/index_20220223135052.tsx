@@ -8,11 +8,23 @@ import { TransactionContext } from '../../TransactionContext';
 import { Container } from "./styles";
 
  export function Summary() {
-   //desse jeito ja temos o valor de data pra gente / contexto
-  const data = useContext(TransactionContext);
-
   return (
+
+
+    //vamos usar um api um pouco antiga mas ainda presente em projeto mais antigos RendleProps
+    //vamos chamr o contexto e passar um propriedade consumer - "TransactionContext.Consumer"
+    //passar um função, que recebe meu dados
     <Container >
+      <TransactionContext.Consumer>
+        {(data) => {
+          console.log(data)
+          return <p>Oi</p>
+          }}
+      </TransactionContext.Consumer>
+    
+
+
+
       <div>
         <header>
           <p>Entradas</p>

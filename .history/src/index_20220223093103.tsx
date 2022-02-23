@@ -12,29 +12,27 @@ createServer({
 
   //Para isso vamos chamar um função chamda seeds, que recebe uma propriedade "server"
   //passando nela o "..." dentro dela o nome do modulo ou tabela no plural "transactions"
-  //Depois devolvemos as transactions que eu quero iniciar 
+  //Depois devolvemos as transactions que eu quero iniciar
   seeds(server) {
     server.db.loadData({
       transactions: [
         {
           id: 1,
           title: "Freelancer Jobs",
-          type: "deposit",
-          category: "Trabalho",
-          amount: 5000,
+          Category: "Jobs",
+          amount: 3000,
           createAt: new Date("2022-02-12 09:30:30")
         },
         {
-          id: 2,
-          title: "Aluguel",
-          type: "withdraw",
-          category: "Moradia",
-          amount: -1000,
-          createAt: new Date("2022-02-15 11:30:30")
+          id: 1,
+          title: "Freelancer Jobs",
+          Category: "Jobs",
+          amount: 3000,
+          createAt: new Date("2022-02-12 09:30:30")
         }
       ]
     })
-  },
+  }
 
   routes() {
     this.namespace = 'api'; 

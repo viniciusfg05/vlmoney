@@ -1,7 +1,7 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { Container } from "./styles";
-import { TransactionContext } from '../../TransactionContext';
+
 
 interface Transaction {
   id: number;
@@ -9,11 +9,11 @@ interface Transaction {
   amount: number;
   type: string;
   category: string;
-  createdAt: number; //depois vou precisar converter para uma data
+  createdAt: string; //depois vou precisar converter para uma data
 }
 
 export function TransitionsTable() {
-  const data = useContext(TransactionContext);
+
 
   const [ transactions, setTransactions ] = useState<Transaction[]>([]);
 
@@ -23,6 +23,11 @@ export function TransitionsTable() {
     .then(response => setTransactions(response.data.transactions))
   }, [])
 
+
+  //add a "api" que é a const que criamos no srquivo api em services e colocamos ele para "get"
+  //Não precisamos mais da conversão do .json
+  // já onde estava (data => console.log(data)) vamos trocar por (response => console.log(response.data)) 
+  
   return (
     <Container>
       <table>
@@ -45,11 +50,7 @@ export function TransitionsTable() {
                   }).format(transaction.amount)}
                 </td>
                 <td>{transaction.category}</td>
-                <td>
-                  {new Intl.DateTimeFormat('pt-BR').format(transaction.createdAt)}
-                </td>
-                  
-                
+                <td>{transaction.createdAt}</td>
               </tr>
             //Para tirar o retur tiramos as {} por ()
 

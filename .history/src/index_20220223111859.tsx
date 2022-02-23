@@ -20,7 +20,7 @@ createServer({
           id: 1,
           title: "Freelancer Jobs",
           type: "deposit",
-          category: "Trabalho",
+          Category: "Trabalho",
           amount: 5000,
           createAt: new Date("2022-02-12 09:30:30")
         },

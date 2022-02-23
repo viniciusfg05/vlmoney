@@ -1,7 +1,7 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { Container } from "./styles";
-import { TransactionContext } from '../../TransactionContext';
+
 
 interface Transaction {
   id: number;
@@ -9,20 +9,35 @@ interface Transaction {
   amount: number;
   type: string;
   category: string;
-  createdAt: number; //depois vou precisar converter para uma data
+  createdAt: string; //depois vou precisar converter para uma data
 }
 
 export function TransitionsTable() {
-  const data = useContext(TransactionContext);
+  //precisamos criar um estado, começando o estado com array vazio
+  // Mudar o response para setTransactions(response.data)
+
+  //Precisamo percorrer cada uma das transações
+
+  //add o map() no tbody
+
+  //Vamos criar um interface tipificando as transações
+  //no estado vamos colocação da tipificação "useState<Transaction[]>([]);" armazena um array de transaction
+
+  //Toda vez que faço um map preciso  passar um 
 
   const [ transactions, setTransactions ] = useState<Transaction[]>([]);
 
 
   useEffect(() => {
     api.get('transactions') //rota possivelmente criariamos no futuro
-    .then(response => setTransactions(response.data.transactions))
+    .then(response => setTransactions(response.data))
   }, [])
 
+
+  //add a "api" que é a const que criamos no srquivo api em services e colocamos ele para "get"
+  //Não precisamos mais da conversão do .json
+  // já onde estava (data => console.log(data)) vamos trocar por (response => console.log(response.data)) 
+  
   return (
     <Container>
       <table>
@@ -38,18 +53,9 @@ export function TransitionsTable() {
           { transactions.map(transaction => (
               <tr key={transaction.id}>
                 <td>{transaction.title}</td>
-                <td className={transaction.type}>
-                  {new Intl.NumberFormat('pt-BR', {
-                    style: 'currency',
-                    currency: 'BRL'
-                  }).format(transaction.amount)}
-                </td>
+                <td className={transaction.type}>{transaction.amount}</td>
                 <td>{transaction.category}</td>
-                <td>
-                  {new Intl.DateTimeFormat('pt-BR').format(transaction.createdAt)}
-                </td>
-                  
-                
+                <td>{transaction.createdAt}</td>
               </tr>
             //Para tirar o retur tiramos as {} por ()
 

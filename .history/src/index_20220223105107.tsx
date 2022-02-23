@@ -20,15 +20,15 @@ createServer({
           id: 1,
           title: "Freelancer Jobs",
           type: "deposit",
-          category: "Trabalho",
-          amount: 5000,
+          Category: "Jobs",
+          amount: 500,
           createAt: new Date("2022-02-12 09:30:30")
         },
         {
           id: 2,
           title: "Aluguel",
           type: "withdraw",
-          category: "Moradia",
+          Category: "Moradia",
           amount: -1000,
           createAt: new Date("2022-02-15 11:30:30")
         }
