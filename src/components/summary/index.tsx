@@ -9,7 +9,8 @@ import { Container } from "./styles";
 
  export function Summary() {
    //desse jeito ja temos o valor de data pra gente / contexto
-  const data = useContext(TransactionContext);
+  const transactions = useContext(TransactionContext);
+  console.log(transactions)
 
   return (
     <Container >

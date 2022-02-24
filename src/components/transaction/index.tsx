@@ -3,25 +3,11 @@ import { api } from "../../services/api";
 import { Container } from "./styles";
 import { TransactionContext } from '../../TransactionContext';
 
-interface Transaction {
-  id: number;
-  title: string;
-  amount: number;
-  type: string;
-  category: string;
-  createdAt: number; //depois vou precisar converter para uma data
-}
+
 
 export function TransitionsTable() {
-  const data = useContext(TransactionContext);
-
-  const [ transactions, setTransactions ] = useState<Transaction[]>([]);
-
-
-  useEffect(() => {
-    api.get('transactions') //rota possivelmente criariamos no futuro
-    .then(response => setTransactions(response.data.transactions))
-  }, [])
+  //pega as transactions do contexto
+  const transactions = useContext(TransactionContext)
 
   return (
     <Container>

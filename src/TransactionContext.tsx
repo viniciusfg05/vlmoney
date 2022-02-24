@@ -4,7 +4,7 @@
 //como esse coxto vai precisar ser acessado por varios components, vamos colocar o PRovider por volta do App.tsx
 
 
-import { createContext, useEffect, useState } from 'react'
+import { createContext, useEffect, useState, ReactNode } from 'react'
 import { api } from './services/api';
 
 
@@ -17,9 +17,15 @@ interface Transaction {
   createdAt: number; //depois vou precisar converter para uma data
 }
 
-export const TransactionContext = createContext([]);
+// Sempre que vamos tipar um children, vamos usar o ReactNode do 'react'
+// ReactNode aceita todo tipo de conteudo valido no react 
+interface TransactionProviderProps {
+  children: ReactNode;
+}
 
-export function TransactionProvider() {
+export const TransactionContext = createContext<Transaction[]>([]);
+
+export function TransactionProvider({children}: TransactionProviderProps) {
 
   const [ transactions, setTransactions ] = useState<Transaction[]>([]);
 
@@ -28,4 +34,10 @@ export function TransactionProvider() {
     api.get('transactions') //rota possivelmente criariamos no futuro
     .then(response => setTransactions(response.data.transactions))
   }, [])
+
+  return (
+    <TransactionContext.Provider value={transactions}>
+      {children}
+    </TransactionContext.Provider>
+  )
 }
