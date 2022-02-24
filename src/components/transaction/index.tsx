@@ -1,12 +1,14 @@
 import { useEffect, useState, useContext } from "react";
 import { api } from "../../services/api";
 import { Container } from "./styles";
-import { TransactionContext } from '../../TransactionContext';
+import { useTransactions } from '../../hooks/useTransactions'
+
 
 
 
 export function TransitionsTable() {
-  const data = useContext(TransactionContext);
+  //pega as transactions do contexto
+  const {transactions} = useTransactions()
 
   return (
     <Container>

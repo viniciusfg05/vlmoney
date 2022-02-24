@@ -73,7 +73,7 @@ export const GlobalStyles = createGlobalStyle`
     position: relative; //
     border-radius: 0.25rem;
 
-  }j
+  }
 
   .react-modal-close {
     position: absolute;
@@ -83,6 +83,7 @@ export const GlobalStyles = createGlobalStyle`
     background: transparent;
     transition: 0.3s;
 
+   
 
     &:hover {
       filter: brightness(0.8);

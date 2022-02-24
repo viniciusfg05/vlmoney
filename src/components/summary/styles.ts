@@ -4,7 +4,7 @@ import styled from "styled-components";
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  margin-top: -8rem;
+  margin-top: -5rem;
 
   div{
     background: var(--shape);

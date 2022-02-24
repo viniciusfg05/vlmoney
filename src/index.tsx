@@ -29,7 +29,7 @@ createServer({
           title: "Aluguel",
           type: "withdraw",
           category: "Moradia",
-          amount: -1000,
+          amount: 1000,
           createAt: new Date("2022-02-15 11:30:30")
         }
       ]
