@@ -6,8 +6,7 @@ import { TransactionContext } from '../../TransactionContext';
 
 
 export function TransitionsTable() {
-  //pega as transactions do contexto
-  const transactions = useContext(TransactionContext)
+  const data = useContext(TransactionContext);
 
   return (
     <Container>
