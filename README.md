@@ -26,20 +26,16 @@
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - HTML
-- CSS
-- JavaScript
-- NodeJS
-- EJS
-- Express
-- SQLite
+- ReactJs
+- TypeScript
+- Mirage
 
 ## 💻 Projeto
 
-O JobsCalc é uma aplicação de estimativa de cálculo para projetos freelancer, onde é possível cadastrar e excluir jobs (projetos), obtendo uma estimativa de custo de cada job. Além disso, é possível traçar o valor da hora da pessoa que estará usando o sistema 💰
+vlmoney é uma aplicação com proposito para um melhor controle financeiro, podemos listas suas despesas e ganhos. Listando uma tabela, onde é informado o titulo, valor, categoria, e data da criação. 
+Summary, tem um resumo do todal de despesas, entradas e o total geral💰
 
-## 🔖 Layout
 
-Você pode visualizar o layout do projeto através [desse link](https://www.figma.com/file/s4fytPFbDiSkv4GPSfKaLE/Jobs-Planning). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
 
 ## :memo: Licença
 
